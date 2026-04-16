@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息卡片</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <div class="container">
+        <div class="header">
+            <h1>个人小站</h1>
+            <button id="theme-toggle">🌙</button>
+        </div>
+        
+        <!-- 展示模式 -->
+        <div class="card" id="view-card">
+            <div class="view-left">
+                <img id="view-avatar" src="https://via.placeholder.com/100" alt="个人头像">
+                <h2 id="view-name">张三</h2>
+                <p id="view-major">计算机科学与技术2201班</p>
+            </div>
+            <div class="view-right">
+                <div class="view-section">
+                    <h3>技能</h3>
+                    <div class="view-skills" id="view-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="view-section">
+                    <h3>详细介绍</h3>
+                    <p id="view-detail">我是一名热爱计算机的学生</p>
+                </div>
+                <div class="view-section contact-section">
+                    <h3>联系方式</h3>
+                    <p><strong>电话：</strong><span id="view-phone">138-0000-0000</span></p>
+                    <p><strong>邮箱：</strong><span id="view-email">zhangsan@example.com</span></p>
+                </div>
+            </div>
+            <button class="edit-btn" id="edit-btn">✏️ 编辑</button>
+        </div>
+    </div>
+    
+    <!-- 编辑弹窗 -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>编辑个人信息</h2>
+                <button class="close-btn" id="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="edit-form">
+                    <div class="edit-left">
+                        <div class="panel-title">个人基础信息</div>
+                        <div class="avatar-container">
+                            <img id="edit-avatar" src="https://via.placeholder.com/100" alt="个人头像">
+                            <label for="avatar-upload" class="avatar-upload-label">更换头像</label>
+                            <input type="file" id="avatar-upload" accept="image/*">
+                        </div>
+                        
+                        <div class="info-group">
+                            <label for="name">姓名：</label>
+                            <input type="text" id="name" placeholder="请输入姓名">
+                        </div>
+                        
+                        <div class="info-group">
+                            <label for="major">专业班级：</label>
+                            <input type="text" id="major" placeholder="请输入专业班级">
+                        </div>
+                        
+                        <div class="info-group">
+                            <label for="phone">联系电话：</label>
+                            <input type="tel" id="phone" placeholder="请输入电话">
+                        </div>
+                        
+                        <div class="info-group">
+                            <label for="email">个人邮箱：</label>
+                            <input type="email" id="email" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    
+                    <div class="edit-right">
+                        <div class="edit-section">
+                            <div class="panel-title">技能</div>
+                            <div class="skills-container">
+                                <div class="skills-list" id="skills-list"></div>
+                                <div class="add-skill">
+                                    <input type="text" id="new-skill" placeholder="添加技能">
+                                    <button id="add-skill-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="edit-section detail-section">
+                            <div class="panel-title">详细介绍</div>
+                            <textarea id="detail" placeholder="请输入详细介绍..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancel-btn">取消</button>
+                <button class="save-btn" id="save-btn">保存</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
